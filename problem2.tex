@@ -20,12 +20,12 @@ $k_1(x,\widetilde{x}) = a(x)^T*a(\widetilde{x})\\
 k_2(x,\widetilde{x}) = b(x)^T*b(\widetilde{x})$
 As this 2 functions have n,m size as arrays respectively the whole system can be written as
 \begin{align*}
-k(x,\widetilde{x}) = k_1(x,\widetilde{x})*k_2(x,\widetilde{x})\\
-		   = a(x)^T*a1(\widetilde{x}) * b(x)^T*b(\widetilde{x})\\
-		   = \Big( \sum_{i=1}^{n} a_i(x)*a_i(\widetilde{x} \Big)*\Big( \sum_{j=1}^{m} b_j(x)*b_j(\widetilde{x} \Big)\\
-		   = \sum_{i=1}^{n}\sum_{j=1}^{m}[a_i(x)*b_j(x)] * [a_i(\widetilde{x})*b_j(\widetilde{x})]\\
-		   = \sum_{i=1}^{n}\sum_{j=1}^{m} c_{i_j}(x)*c_{i_j}(\widetilde{x})\\
-		   = c(x)^T*c(\widetilde{x})\\
+k(x,\widetilde{x}) &= k_1(x,\widetilde{x})*k_2(x,\widetilde{x})\\
+		   &= a(x)^T*a1(\widetilde{x}) * b(x)^T*b(\widetilde{x})\\
+		   &= \Big( \sum_{i=1}^{n} a_i(x)*a_i(\widetilde{x} \Big)*\Big( \sum_{j=1}^{m} b_j(x)*b_j(\widetilde{x} \Big)\\
+		   &= \sum_{i=1}^{n}\sum_{j=1}^{m}[a_i(x)*b_j(x)] * [a_i(\widetilde{x})*b_j(\widetilde{x})]\\
+		   &= \sum_{i=1}^{n}\sum_{j=1}^{m} c_{i_j}(x)*c_{i_j}(\widetilde{x})\\
+		   &= c(x)^T*c(\widetilde{x})\\
 \end{align*}
 So the product can also be represented by its feature function. It is a valid kernel
 \item) This proof comes form the a),b). As the polynomial will be something like $ax^n+b^{n-1}+....+c$.\\
