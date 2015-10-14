@@ -36,3 +36,14 @@ Moreover $exp(x) = \lim_{i \to \infty} \big( 1+x+ \ldots + \frac{x^i}{i!} \big)$
 So d) is a valid kernel.
 \end{enumerate}
 \subsection{B}
+This function is an RBF function with $\sigma = 1$
+So the expansion of our formula is 
+\begin{align*}
+exp\Big( -\frac{1}{2} \lVert{x}\rVert^2\Big) * exp\Big( -\frac{1}{2} \lVert{y}\rVert^2\Big) * \sum_{i=0}^{\infty} \frac{(xy)^i}{i} &= \\
+exp\Big( -\frac{1}{2} \lVert{x}\rVert^2\Big) * exp\Big( -\frac{1}{2} \lVert{y}\rVert^2\Big) * (1 + \frac{x*y}{1!} + \frac{{x*y}^2}{2!}) + \ldots) &= \\
+exp\Big( -\frac{1}{2} \lVert{x}\rVert^2\Big) * exp\Big( -\frac{1}{2} \lVert{y}\rVert^2\Big) * (1*1 + \frac{x}{\sqrt{1!}}* \frac{y}{\sqrt{1!}} +  \frac{x^2}{\sqrt{2!}}* \frac{y^2}{\sqrt{2!}} + \ldots) &= \\
+\phi(x) * \phi(y)\\
+\end{align*}
+
+where $\phi(x) = \Big[ 1,\frac{x}{\sqrt{1!}},\frac{x^2}{\sqrt{2!}}, \ldots \Big]$
+
