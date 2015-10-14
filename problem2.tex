@@ -1,5 +1,26 @@
 \section{Problem 2}
 \subsection{A}
 Prooving Mercer's Theorem.\\
+For any valid kernel we have that the function has a feature map $\phi$.
+So kernel matrix K is equal to $\phi\big( \overrightarrow{x_i}\big) \cdot \phi\big( \overrightarrow{x_j}\big)$.
+In order to be a $n\times n$ array the $\phi\big( \overrightarrow{x_i}\big)$ will be a column vector.
+So K=$V^TV$. From the tranverse matrix definition we know that if $V$ has real values then $V^TV$ is 
+PSD. As $V$ has real values and also all $c \in \mathbb{R}^n$ then $c^TKc \geq 0$.
 
-\subsection{b}
+\begin{enumerate}[label=\alph*]
+\item) $k_1$ has a feature map $\Phi_1$ and an inner product $\langle\rangle H_{k_1}$.\\
+So $ak_1(x,\widetilde{x}) = \langle \sqrt{a}\Phi_1{x}, \sqrt{a}\Phi_1{\widetilde{x}} \rangle H_{k_1}$. \\
+The same can be done for $bk_2(x,\widetilde{x})$.\\
+We have at the end 
+$\langle \sqrt{a}\Phi_1{x}, \sqrt{a}\Phi_1{\widetilde{x}} \rangle H_{k_1} + \langle \sqrt{b}\Phi_2{x}, \sqrt{b}\Phi_2{\widetilde{x}} \rangle H_{k_2}$\\
+$= \langle [\sqrt{a}\Phi_1{x},\sqrt{b}\Phi_2{x}], [\sqrt{a}\Phi_1{\widetilde{x}},\sqrt{b}\Phi_2{\widetilde{x}}] \rangle$
+Where this on its own is a inner product of a new kernel.
+\item) 
+\item) This proof comes form the a). As the polynomial will be something like $ax^n+b^{n-1}+....+c$.\\
+From a) we know that $ax+bx$ is a valid kernel. We have to proof that a kernel multiplied by a kernel
+is also a kernel. 
+\item) As c) is creating a valid kernel basically this follows is as exp is a function with positive coefficient.\\
+Moreover $exp(x) = \lim_{i \to \infty} \big( 1+x+ \ldots + \frac{x^i}{i!} \big)$.\\
+So d) is a valid kernel.
+\end{enumerate}
+\subsection{B}
