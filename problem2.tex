@@ -15,11 +15,22 @@ We have at the end
 $\langle \sqrt{a}\Phi_1{x}, \sqrt{a}\Phi_1{\widetilde{x}} \rangle H_{k_1} + \langle \sqrt{b}\Phi_2{x}, \sqrt{b}\Phi_2{\widetilde{x}} \rangle H_{k_2}$\\
 $= \langle [\sqrt{a}\Phi_1{x},\sqrt{b}\Phi_2{x}], [\sqrt{a}\Phi_1{\widetilde{x}},\sqrt{b}\Phi_2{\widetilde{x}}] \rangle$
 Where this on its own is a inner product of a new kernel.
-\item) 
-\item) This proof comes form the a). As the polynomial will be something like $ax^n+b^{n-1}+....+c$.\\
-From a) we know that $ax+bx$ is a valid kernel. We have to proof that a kernel multiplied by a kernel
-is also a kernel. This can be proven by the summation of the 2 kernels. It would be as the summattion of
-the first multiplied by the summation of the other. At the end both this summation are one of the new kernel. 
+\item) As the already valid kernels are equal to their respective feature functions.
+$k_1(x,\widetilde{x}) = a(x)^T*a(\widetilde{x})\\
+k_2(x,\widetilde{x}) = b(x)^T*b(\widetilde{x})$
+As this 2 functions have n,m size as arrays respectively the whole system can be written as
+\begin{align*}
+k(x,\widetilde{x}) = k_1(x,\widetilde{x})*k_2(x,\widetilde{x})\\
+		   = a(x)^T*a1(\widetilde{x}) * b(x)^T*b(\widetilde{x})\\
+		   = \Big( \sum_{i=1}^{n} a_i(x)*a_i(\widetilde{x} \Big)*\Big( \sum_{j=1}^{m} b_j(x)*b_j(\widetilde{x} \Big)\\
+		   = \sum_{i=1}^{n}\sum_{j=1}^{m}[a_i(x)*b_j(x)] * [a_i(\widetilde{x})*b_j(\widetilde{x})]\\
+		   = \sum_{i=1}^{n}\sum_{j=1}^{m} c_{i_j}(x)*c_{i_j}(\widetilde{x})\\
+		   = c(x)^T*c(\widetilde{x})\\
+\end{align*}
+So the product can also be represented by its feature function. It is a valid kernel
+\item) This proof comes form the a),b). As the polynomial will be something like $ax^n+b^{n-1}+....+c$.\\
+From a) we know that $ax+bx$ is a valid kernel. Also the kernel that are in power $(n,n-1)$ are also valid kernels
+because of b). Therefore all the summations are producing a valid kernel.
 \item) As c) is creating a valid kernel basically this follows is as exp is a function with positive coefficient.\\
 Moreover $exp(x) = \lim_{i \to \infty} \big( 1+x+ \ldots + \frac{x^i}{i!} \big)$.\\
 So d) is a valid kernel.
