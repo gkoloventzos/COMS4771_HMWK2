@@ -12,3 +12,39 @@ So as H can shatter in 2 classes it means that $2^d \leq \lvert H\rvert$.
 VC(H) \leq \log_2 \lvert H\rvert
 \end{eqnarray}
 \subsection{C}
+If we select one point then we can always shatter it.
+If we select two points then we need 2 points that will have one common digit and one unique.
+This is because the format of the labeling can be :\\
+\begin{tabular}{ c | c | c }
+  Class & ab & ac  \\
+  $C_x$ & - & - \\
+  $C_a$ & + & + \\
+  $C_b$ & + & - \\
+  $C_c$ & - & + \\
+\end{tabular}
+\\
+So the VC dimension is at least 2.
+For three numbers in order to be able to label them we must have one number common
+to all three. One common with only one of the other 2. And also one unique. This creates 3 4-digit numbers.\\
+\begin{tabular}{ c | c | c | c }
+  Class & xyza & xybc & xzbe \\
+  $C_n$ & - & - & - \\
+  $C_x$ & + & + & + \\
+  $C_a$ & + & - & - \\
+  $C_c$ & - & + & - \\
+  $C_e$ & - & - & + \\
+  $C_y$ & + & + & - \\
+  $C_z$ & + & - & + \\
+  $C_b$ & - & + & + \\
+\end{tabular}
+
+x is the common to all. \\
+y is the common between 1,2. \\
+z is the common between 1,3.\\
+b is the common between 2,3.\\
+a is unique to 1.\\
+c is unique to 2.\\
+e is unique to 3.\\
+
+So we cannot shatter 3 points as we do not have 4-digit number.
+The VC dimension is 2.
