@@ -1,3 +1,36 @@
 \section{Problem 3}
 \subsection{a}
+The primal SVM problem is to minimize $1/2 \lVert{w}\rVert^2$\\
+We need for the derivation the $\min\limits{\xi,w}\frac{1}{2} (\xi^2 + \lambda w^Tw)$ \\
+Using $a_i$ for denoting Lagrange multipliers we get
+$L = \frac{1}{2} (\xi^2 + \lambda w^Tw) + \sum_{i}{}a_i(x_iw -y_i-\xi_i)$\\
+Lagragne duality is to maximize Lagrange multipliers. The original problem can be solved by \\
+$\max_a\min_{\xi,w}L(w,\xi,a)$\\
+First we will compute the minimization. The $a$ will be fixed as it mill be maximized afterwards.
+In order to do this we will compute the partial derivatives for $\xi and w$ and set them to zero.
+\begin{align*}
+0 &= \frac{\partial L}{\partial \xi} = \xi + 0 + 0 - 0 - a_i = \xi - a_i\\
+\xi &= a_i\\
+0 &= \frac{\partial L}{\partial w} = 0 + \lambda w + \sum_{i}{}a_ix_i = \lambda w + \sum_{i}{}a_ix_i\\
+w &= -\frac{1}{\lambda} \sum_{i}{}a_i\xi_i\\
+\end{align*}
+For solving the maximization problem we will substitute the $\xi,w$ in the $L$ and we will also do partial derivative in $a$
+and set it to 0.\\
+\begin{align*}
+\max_a\min_{\xi,w}L(w,\xi,a) &= \max_a \frac{1}{2}\sum_i{a_i}^2 + \frac{1}{2}\lambda(-\frac{1}{\lambda}\sum_{i}{}a_ix_i) (-\frac{1}{\lambda}\sum_{j}{}a_jx_j) \\
+&+ \sum_{i}{}a_i(x_i* -\frac{1}{\lambda}\sum_{j}{}a_ix_j-y_i-a_i)\\
+&= \max_a-\frac{1}{2}\sum_i{a_i}^2 - -\frac{1}{2\lambda}\sum_i\sum_j a_i a_j x_i x_j - \sum_i a_i*y_i
+\end{align*}
+In order to maximize $a$ we have to take the gradient and make it equal to zero.
+We must also tell that $x_i x_j$ is a kernel (K) which is a Gram matrix which is symmetric.
+\begin{align*}
+\frac{\partial L}{\partial a} &= a -\frac{1}{2\lambda}a^T(K+K^T) -y\\
+&= a -\frac{1}{\lambda}a^T K -y = 0 \Rightarrow \\
+a &= (-\frac{1}{\lambda}K-I)^{-1} y 
+\end{align*}
 \subsection{b}
+In equation $w = -\frac{1}{\lambda} \sum_{i}{}a_i\xi_i$ we will substitute our maximized \\
+$a = (-\frac{1}{\lambda}K-I)^{-1} y$.\\
+With this we can compute w
+
+
